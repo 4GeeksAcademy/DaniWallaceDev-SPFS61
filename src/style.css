@@ -1,1 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: light;
+}
+button {
+  border-radius: 10px;
+}
+.content {
+  background-color: rgb(250, 164, 164);
+  border-radius: 3px;
+}
