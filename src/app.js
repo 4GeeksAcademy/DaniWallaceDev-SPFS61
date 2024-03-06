@@ -31,20 +31,20 @@ window.onload = function() {
     "mientras me comía un plato de lentejas",
     "mientras escuchaba música"
   ];
+  // Se genera una función reutilizable y adaptativa para usarla posteriormente a la hora de generar los parametros aleatorios dentro de mi funcion excusa
+  function getRandomElement(optionList) {
+    return optionList[Math.floor(Math.random() * optionList.length)];
+  }
   //Una vez han sido creadas las variables es necesario formar la función que randomice la excusa
   function excusa() {
-    let persona = who[Math.floor(Math.random() * who.length)];
-    let accion = action[Math.floor(Math.random() * action.length)];
-    let que = what[Math.floor(Math.random() * what.length)];
-    let como = how[Math.floor(Math.random() * how.length)];
-    let cuando = when[Math.floor(Math.random() * when.length)];
+    let persona = getRandomElement(who);
+    let accion = getRandomElement(action);
+    let que = getRandomElement(what);
+    let como = getRandomElement(how);
+    let cuando = getRandomElement(when);
     //Se realiza el llamado a la función formando así la frase, habría otra opción que sería con $ y ````
     // return who2 + " " + action2 + " " + what2 + " " + how2 + " " + when2;
     return `${persona} ${accion} ${que} ${como} ${cuando}`;
-  }
-  function recargarPagina() {
-    // Puedes usar location.reload() o location.reload(true)
-    location.reload(); // Utiliza esta línea si deseas recargar la página ignorando la caché del navegador
   }
   //Se utiliza la propiedad javascript de document.getelementbyid para hacer el llamado al archivo html donde se configura la excusa
   //Siempre debe ir acompañado de la propiedad .innerHTML
